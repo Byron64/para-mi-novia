@@ -140,7 +140,7 @@ function toggleModal(show) {
         titleIndex = 0;
         currentParagraph = 0;
         charIndex = 0;
-        if(scrollContainer) scrollContainer.scrollTop = 0; // Reinicia el scroll arriba al abrir
+        if(scrollContainer) scrollContainer.scrollTop = 0; 
 
         modal.style.display = 'flex'; 
         setTimeout(() => {
