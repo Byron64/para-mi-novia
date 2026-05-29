@@ -14,7 +14,7 @@
         <div class="tree-container" id="tree">
             <div class="tree-trunk"></div>
         </div>
-<!-- Frases  superior -->
+        <!-- Frases superior -->
         <div class="counter-container">
             <div class="counter-title">Nuestro tiempo juntos...</div>
             <div class="time-units">
@@ -24,7 +24,7 @@
                 <div class="time-box"><span id="seconds">00</span>Seg</div>
             </div>
         </div>
-<!-- Boton de interacciones -->
+        <!-- Boton de interacciones -->
         <div class="btn-container">
             <button id="btnCarta" onclick="toggleModal(true)">
                 ❤️ Carta
@@ -34,10 +34,13 @@
             </button>
         </div>
     </div>
-<!-- Fotos de la carta -->
+
+    <!-- Fotos de la carta (Ventana Emergente Optimizada) -->
     <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
         <div class="modal-card">
             <button class="close-btn" onclick="toggleModal(false)">✕</button>
+            
+            <!-- El carrusel se mantiene en la parte superior fija -->
             <div class="carousel">
                 <div class="carousel-track" id="track">
                     <img class="carousel-img" src="foto1.jpeg" alt="Foto 1">
@@ -47,10 +50,15 @@
                     <img class="carousel-img" src="foto5.png" alt="Foto 5">
                 </div>
             </div>
-            <div class="carta-texto">
-                <h2 id="typing-title"></h2>
-                <div id="typing-content"></div>
+            
+            <!-- Esta nueva zona permite el desplazamiento inteligente solo del texto -->
+            <div class="modal-scrollable-content">
+                <div class="carta-texto">
+                    <h2 id="typing-title"></h2>
+                    <div id="typing-content"></div>
+                </div>
             </div>
+
         </div>
     </div>
 
