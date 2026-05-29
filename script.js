@@ -131,6 +131,7 @@ function toggleModal(show) {
     const modal = document.getElementById('modal');
     const titleContainer = document.getElementById('typing-title');
     const contentContainer = document.getElementById('typing-content');
+    const scrollContainer = document.querySelector('.modal-scrollable-content');
     
     if (show) { 
         clearTimeout(typingTimeout);
@@ -139,6 +140,7 @@ function toggleModal(show) {
         titleIndex = 0;
         currentParagraph = 0;
         charIndex = 0;
+        if(scrollContainer) scrollContainer.scrollTop = 0; // Reinicia el scroll arriba al abrir
 
         modal.style.display = 'flex'; 
         setTimeout(() => {
