@@ -161,19 +161,22 @@ button:active { transform: scale(0.95); }
     transition: opacity 0.3s ease;
 }
 
+/* Modificaciones estructurales para fijar el fondo y el tamaño */
 .modal-card {
     background-color: var(--card-bg);
-    width: 95%;
-    max-width: 550px;
-    border-radius: 20px;
-    padding: 30px;
+    width: 92%;
+    max-width: 440px;
+    height: 80vh; /* Fija un alto máximo del 80% de la pantalla */
+    border-radius: 25px;
+    padding: 25px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     position: relative;
     transform: translateY(30px);
     transition: transform 0.3s ease;
-    max-height: 90vh;
-    overflow-y: auto;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    overflow: hidden; /* Evita desbordamientos externos */
 }
 
 .modal-overlay.active { display: flex; opacity: 1; }
@@ -197,15 +200,16 @@ button:active { transform: scale(0.95); }
     z-index: 1001;
 }
 
-/* Carrusel para fotos */
+/* Carrusel para fotos (Se mantiene estático arriba de la carta) */
 .carousel { 
     width: 100%; 
-    height: 380px; 
+    height: 250px; /* Reducido levemente para balancear pantallas móviles */
     overflow: hidden; 
     border-radius: 15px; 
     position: relative; 
-    margin-bottom: 25px; 
+    margin-bottom: 15px; 
     background-color: #fcf8f9;
+    flex-shrink: 0; /* Impide que el carrusel colapse o cambie de tamaño */
 }
 
 .carousel-track { 
@@ -218,7 +222,23 @@ button:active { transform: scale(0.95); }
 .carousel-img { 
     width: 100%; 
     height: 100%; 
-    object-fit: contain;
+    object-fit: cover; /* Cambiado a cover para un look tipo postal de Instagram sin espacios vacíos */
+}
+
+/* NUEVA CLASE: Contenedor interno con scroll dedicado solo para las letras */
+.modal-scrollable-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Permite el scroll interno */
+    padding-right: 5px;
+}
+
+/* Ocultar barra de scroll para estilización limpia (Opcional, se adapta a iPhone de forma invisible) */
+.modal-scrollable-content::-webkit-scrollbar {
+    width: 4px;
+}
+.modal-scrollable-content::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 77, 109, 0.3);
+    border-radius: 10px;
 }
 
 /* Texto de la carta */
@@ -226,7 +246,7 @@ button:active { transform: scale(0.95); }
     line-height: 1.7; 
     font-size: 1.05rem; 
     text-align: left; 
-    padding: 0 5px;
+    padding: 5px 0;
 }
 
 .carta-texto h2 { 
