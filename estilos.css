@@ -203,7 +203,7 @@ button:active { transform: scale(0.95); }
 /* Carrusel para fotos (Se mantiene estático arriba de la carta) */
 .carousel { 
     width: 100%; 
-    height: 250px; /* Reducido levemente para balancear pantallas móviles */
+    height: 350px; /* Reducido levemente para balancear pantallas móviles */
     overflow: hidden; 
     border-radius: 15px; 
     position: relative; 
