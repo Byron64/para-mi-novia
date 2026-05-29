@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Persona Favorita</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="phrases-container" id="phrases">Juntos es mi lugar feliz ✨</div>
+
+        <div class="tree-container" id="tree">
+            <div class="tree-trunk"></div>
+        </div>
+<!-- Frases  superior -->
+        <div class="counter-container">
+            <div class="counter-title">Nuestro tiempo juntos...</div>
+            <div class="time-units">
+                <div class="time-box"><span id="days">00</span>Días</div>
+                <div class="time-box"><span id="hours">00</span>Horas</div>
+                <div class="time-box"><span id="minutes">00</span>Min</div>
+                <div class="time-box"><span id="seconds">00</span>Seg</div>
+            </div>
+        </div>
+<!-- Boton de interacciones -->
+        <div class="btn-container">
+            <button id="btnCarta" onclick="toggleModal(true)">
+                ❤️ Carta
+            </button>
+            <button id="btnMagia" onclick="toggleMagicHeart(true)">
+                ✨ Presiona Aquí
+            </button>
+        </div>
+    </div>
+<!-- Fotos de la carta -->
+    <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+        <div class="modal-card">
+            <button class="close-btn" onclick="toggleModal(false)">✕</button>
+            <div class="carousel">
+                <div class="carousel-track" id="track">
+                    <img class="carousel-img" src="foto1.jpeg" alt="Foto 1">
+                    <img class="carousel-img" src="foto2.jpeg" alt="Foto 2">
+                    <img class="carousel-img" src="foto3.jpeg" alt="Foto 3">
+                    <img class="carousel-img" src="foto4.jpg" alt="Foto 4">
+                    <img class="carousel-img" src="foto5.png" alt="Foto 5">
+                </div>
+            </div>
+            <div class="carta-texto">
+                <h2 id="typing-title"></h2>
+                <div id="typing-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="heart-canvas-container" id="canvasContainer">
+        <button class="btn-back" onclick="toggleMagicHeart(false)">Volver ↩</button>
+        <canvas id="heartCanvas"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
